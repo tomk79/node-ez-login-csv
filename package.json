@@ -1,6 +1,6 @@
 {
   "name": "find-in-csv",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1-alpha.2+nb",
   "description": "Easy way finding the rows in a CSV.",
   "main": "libs/main.js",
   "repository": {

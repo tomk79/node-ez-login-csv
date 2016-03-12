@@ -1,4 +1,6 @@
-# node-find-in-csv
+# find-in-csv
+
+Easy way finding a row in a CSV.
 
 <table>
   <thead>
@@ -30,7 +32,7 @@
   </tbody>
 </table>
 
-[![NPM](https://nodei.co/npm/node-find-in-csv.png)](https://nodei.co/npm/node-find-in-csv/)
+[![NPM](https://nodei.co/npm/find-in-csv.png)](https://nodei.co/npm/find-in-csv/)
 
 ## Install
 
