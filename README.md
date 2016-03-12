@@ -18,7 +18,7 @@
         <a href="https://ci.appveyor.com/project/tomk79/node-find-in-csv"><img src="https://ci.appveyor.com/api/projects/status/4r3uvp18tm9co988/branch/master?svg=true"></a>
       </td>
     </tr>
-    <!-- tr>
+    <tr>
       <th>develop</th>
       <td align="center">
         <a href="https://travis-ci.org/tomk79/node-find-in-csv"><img src="https://secure.travis-ci.org/tomk79/node-find-in-csv.svg?branch=develop"></a>
@@ -26,7 +26,7 @@
       <td align="center">
         <a href="https://ci.appveyor.com/project/tomk79/node-find-in-csv"><img src="https://ci.appveyor.com/api/projects/status/4r3uvp18tm9co988/branch/develop?svg=true"></a>
       </td>
-    </tr -->
+    </tr>
   </tbody>
 </table>
 
