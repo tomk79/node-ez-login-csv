@@ -63,7 +63,7 @@ module.exports = function( pathCsv, options ){
 		return;
 	}
 
-	this.check = function(tgt, callback){
+	this.get = function(tgt, callback){
 		callback = callback || function(){};
 		tgt = tgt || {};
 		for( var i in this.options.require ){

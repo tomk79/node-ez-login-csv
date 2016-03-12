@@ -2,7 +2,7 @@ var assert = require('assert');
 // var path = require('path');
 var fs = require('fs');
 var Promise = require("es6-promise").Promise;
-var EzLoginCsv = require('../libs/main.js');
+var FindInCsv = require('../libs/main.js');
 
 describe('認証する', function() {
 
@@ -10,8 +10,8 @@ describe('認証する', function() {
 		this.timeout(5*1000);
 
 		new Promise(function(rlv, rjc){
-			var ezLoginCsv = new EzLoginCsv( __dirname+'/data/users.csv' );
-			ezLoginCsv.check({'id':'a', 'pw':'b'}, function(result){
+			var findInCsv = new FindInCsv( __dirname+'/data/users.csv' );
+			findInCsv.get({'id':'a', 'pw':'b'}, function(result){
 				assert.equal(result['id'], 'a');
 				assert.equal(result['pw'], 'b');
 				assert.equal(result['name'], 'hoge');
@@ -20,8 +20,8 @@ describe('認証する', function() {
 			});
 		})
 		.then(function(){ return new Promise(function(rlv, rjc){
-			var ezLoginCsv = new EzLoginCsv( __dirname+'/data/users.csv', {'require': ['id']} );
-			ezLoginCsv.check({'id':'a b'}, function(result){
+			var findInCsv = new FindInCsv( __dirname+'/data/users.csv', {'require': ['id']} );
+			findInCsv.get({'id':'a b'}, function(result){
 				assert.equal(result['id'], 'a b');
 				assert.equal(result['pw'], 'c"d,ef');
 				assert.equal(result['name'], 'foo');
@@ -49,17 +49,17 @@ describe('認証に失敗する', function() {
 		this.timeout(5*1000);
 
 		new Promise(function(rlv, rjc){
-			var ezLoginCsv = new EzLoginCsv( __dirname+'/data/users.csv' );
+			var findInCsv = new FindInCsv( __dirname+'/data/users.csv' );
 			// require の条件に満たないため false
-			ezLoginCsv.check({'id':'a'}, function(result){
+			findInCsv.get({'id':'a'}, function(result){
 				assert.strictEqual(result, false);
 				rlv();
 			});
 		})
 		.then(function(){ return new Promise(function(rlv, rjc){
-			var ezLoginCsv = new EzLoginCsv( __dirname+'/data/users.csv' );
+			var findInCsv = new FindInCsv( __dirname+'/data/users.csv' );
 			// レコードが存在しないため false
-			ezLoginCsv.check({'id':'undefineduser', 'pw':'1234567890'}, function(result){
+			findInCsv.get({'id':'undefineduser', 'pw':'1234567890'}, function(result){
 				assert.strictEqual(result, false);
 				rlv();
 			});
