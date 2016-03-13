@@ -51,13 +51,13 @@ module.exports = function( pathCsv, options ){
 			// console.log(_this.csvAry);
 			rlv();
 		}); })
+		.catch(function(err) {
+			// console.error("Failed!", err);
+			_this.csvAry = false;
+		})
 		.then(function(){
 			callback(_this.csvAry);
 			rlv();
-		})
-		.catch(function(err) {
-			// console.error("Failed!", err);
-			callback(false);
 		})
 		;
 		return;
