@@ -68,7 +68,10 @@ var FindInCsv = require('find-in-csv');
 var findInCsv = new FindInCsv(
 	'/path/to/your.csv',
 	{
-		"require": ['head1', 'head2']
+		"require": ['head1', 'head2'],
+		"encrypted": {
+			"pw": "sha1" // 'sha1' | 'md5'
+		}
 	}
 );
 ```
